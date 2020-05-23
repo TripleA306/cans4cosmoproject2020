@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>SubscriberLogsOut_SubscriberLogsOutAndBackIn_SubscriberIsLoggedIn</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>c4ab7223-fe19-44d9-bd26-e51b7ba8cb98</testCaseGuid>
+</TestCaseEntity>

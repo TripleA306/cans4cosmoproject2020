@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>IsValidCity_CityUpperBound_CityIsValid</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>105850f6-358a-4e82-b166-cc390b9abd57</testCaseGuid>
+</TestCaseEntity>

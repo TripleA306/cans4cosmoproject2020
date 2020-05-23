@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>AreDeleteElementsPresent_DeleteButtonIsClicked_ModalAppears</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>ae0bb29f-0a79-4dfb-a46a-c1ee85726c32</testCaseGuid>
+</TestCaseEntity>

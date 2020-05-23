@@ -1,0 +1,370 @@
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
+using System.Threading.Tasks;
+using CosmoAPI.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
+
+
+namespace CosmoAPI
+{
+    public class Startup
+    {
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+        //Added for Enable CORS Tutorial https://docs.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-3.1
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
+        public IConfiguration Configuration { get; }
+
+        // This method gets called by the runtime. Use this method to add services to the container.
+        public void ConfigureServices(IServiceCollection services)
+        {
+            //Sets compatibility version to match behavour of ASP.NET Core MVC 2.1 - We're using .Net Core 2.1, not latest version (3.0)
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            //Uncomment this line and comment the next to use the In Memory DB
+            //Setting to In-Memory database WILL BREAK LOGIN UI TESTS
+            //services.AddDbContext<CosmoContext>(options => options.UseInMemoryDatabase("InMemoryCosmoDB"));
+            services.AddDbContext<CosmoContext>(options => options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=CosmoContextDB;Trusted_Connection=True;MultipleActiveResultSets=true"));
+
+
+            //Original Code
+            //services.AddMvc();
+            //services.AddDbContext<CosmoContext>(options =>
+            //        options.UseSqlServer(Configuration.GetConnectionString("CosmoContext")));
+
+            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddIdentityServerAuthentication(options =>
+                {
+                    options.Authority = "https://localhost:5000/";
+                    options.RequireHttpsMetadata = true;
+                    options.ApiName = "api1";
+                });
+
+            //https://docs.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-3.1 used to bypass coors errors     
+   
+            //Added for Enable CORS Tutorial https://docs.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-3.1
+            //Allows for Cross Origin Requests to occur (Requests to a different domain/page than where the web page is hosted)
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy(MyAllowSpecificOrigins,
+                builder =>
+                {
+                    //192.168.0.101 is for Kyle to test at home. Trying to get external hosting down, got network hosting working kind of
+                    builder.WithOrigins("http://localhost:8080", "http://192.168.0.101:8080") //Specifies a URL to accept requests from
+                    .AllowAnyHeader().AllowAnyMethod();     
+                });
+            });
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy(MyAllowSpecificOrigins,
+                builder =>
+                {
+                    builder.WithOrigins("http://localhost:8080").AllowAnyHeader().AllowAnyMethod();   //Specifies a URL to accept requests from
+
+                });
+            });
+        }
+
+
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, CosmoContext context)
+        {
+            //Checks if the environment the webApp is hosted in is a development environment
+            if (env.IsDevelopment())
+            {
+
+                app.UseDeveloperExceptionPage();        //Provides the Developer Exception Page. Page gives information on errors thrown, requests, queries, and others
+
+                context.Database.EnsureDeleted();
+                context.Database.EnsureCreated();       //Checks that the context's database is created. Returns true if it is, false if not
+
+                unloadDB(context); //Helper method to unload items in the context database (ensures fresh dummy data)
+                loadRegions(context);   //Helper method to load dummy Regions into Region table
+                loadRoutes(context);    //Helper method to load dummy Routes into Route table
+                loadSubscribers(context);
+
+                //Added for Enable CORS Tutorial https://docs.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-3.1
+                //Tells the application to run the given policy name
+                app.UseCors(MyAllowSpecificOrigins);
+
+                context.SaveChanges();
+            }
+            app.UseAuthentication();
+            app.UseMvc();   //Adds MVC to the .Net Core REquest Execution Pipeline
+
+        }
+        
+        /// <summary>
+        /// Helper Method to remove contents of the Context
+        /// </summary>
+        /// <param name="context"></param>
+        private void unloadDB(CosmoContext context)
+        {
+            
+            
+            context.RemoveRange(context.Subscriber);
+            context.RemoveRange(context.Location);
+            context.RemoveRange(context.Region); //Remove contents of Region table from context
+            context.RemoveRange(context.Route); //Remove contents of Route table from context
+
+            context.SaveChanges();  //Save changes
+        }
+
+        /// <summary>
+        /// Helper method to load test Regions into context
+        /// </summary>
+        /// <param name="context"></param>
+        private void loadRegions(CosmoContext context)
+        {
+            DateTime tomorrow = DateTime.Today.AddDays(1.0); //Gets today's date
+
+            List<Region> regions = new List<Region>()   //Defining a list of Regions to load into context
+            {
+                new Region()
+                {
+                    regionID = default(int),
+                    regionName ="Harbor Creek",
+                    frequency = 10,
+                    firstDate = tomorrow   //Adds tomorrow as region's firstDate
+                },
+                new Region()
+                {
+                    regionID = default(int),
+                    regionName = "Downtown",
+                    frequency = 10,
+                    firstDate = tomorrow.AddDays(1.0) //Adds the day after as region's firstDate
+                },
+                new Region()
+                {
+                    regionID = default(int),
+                    regionName = "South End",
+                    frequency = 10,
+                    firstDate = tomorrow.AddDays(2.0) //Adds the date in three days as region's firstDate
+                },
+                new Region() //Region 1 year in the past 
+                { //IMPORTANT--------------------------------------> DO NOT CHANGE THE DATE, Katalon tests have a hard coded version of this region 
+                    regionID = default(int),
+                    regionName = "Nathans Test Region",
+                    frequency = 10,
+                    firstDate = new DateTime(2019,1,1) 
+                },
+                new Region()
+				{ //IMPORTANT--------------------------------------> DO NOT CHANGE THE DATE, Katalon tests have a hard coded version of this region 
+                    regionID = default(int),
+                    regionName = "Nathans 2nd Test Region",
+                    frequency = 10,
+                    firstDate = new DateTime(2018,1,1) 
+                },
+                new Region()
+                { 
+                    regionID = default(int),
+                    regionName = "My name is Brett",
+                    frequency = 10,
+                    firstDate = new DateTime(2019,2,1)
+                }
+            };
+
+            context.Region.AddRange(regions);       //Adds Regions list to context
+            context.SaveChanges();      //Saves changes
+        }
+
+        /// <summary>
+        /// Helper Method for loading Routes into context
+        /// </summary>
+        /// <param name="context"></param>
+        private void loadRoutes(CosmoContext context)
+        {
+            //DateTime date = DateTime.Today; //Gets todays date. Later used to ensure dates are in the future
+
+            List<Region> regions = context.Region.ToList<Region>(); //Gets Regions from context. Needed to assign required regionID and region properties
+
+            List<Route> routes = new List<Route>()  //Creating route objects. Dates are generated based on region's first pickup date. Set it up to generate the next three upcoming sets of route dates
+            {
+                //Week 1 Routes
+                new Route() { routeName="Logan's Loop",     regionID=regions[0].regionID, region=regions[0], completed=true, routeDate = regions[0].GenerateNextPickupDate() },
+                new Route() { routeName="Nathan's Circuit", regionID=regions[1].regionID, region=regions[1], completed=true, routeDate = regions[1].GenerateNextPickupDate() },
+                new Route() { routeName="Original Name 3",  regionID=regions[2].regionID, region=regions[2], completed=true, routeDate = regions[2].GenerateNextPickupDate() },
+
+                //Week 2 Routes
+                new Route() { routeName="Logan's Loop",     regionID=regions[0].regionID, region=regions[0], completed=true, routeDate = regions[0].GenerateNextPickupDate().AddDays(7.0 * regions[0].frequency) },
+                new Route() { routeName="Nathan's Circuit", regionID=regions[1].regionID, region=regions[1], completed=true, routeDate = regions[1].GenerateNextPickupDate().AddDays(7.0 * regions[1].frequency) },
+                new Route() { routeName="Original Name 3",  regionID=regions[2].regionID, region=regions[2], completed=false, routeDate = regions[2].GenerateNextPickupDate().AddDays(7.0 * regions[2].frequency) },
+
+                //Week 3 Routes
+                new Route() { routeName="Logan's Loop",     regionID=regions[0].regionID, region=regions[0], completed=false, routeDate = regions[0].GenerateNextPickupDate().AddDays(7.0 * 2.0 * regions[0].frequency) },
+                new Route() { routeName="Nathan's Circuit", regionID=regions[1].regionID, region=regions[1], completed=false, routeDate = regions[1].GenerateNextPickupDate().AddDays(7.0 * 2.0 * regions[1].frequency) },
+                new Route() { routeName="Original Name 3",  regionID=regions[2].regionID, region=regions[2], completed=false, routeDate = regions[2].GenerateNextPickupDate().AddDays(7.0 * 2.0 * regions[2].frequency) },
+            };
+
+            context.Route.AddRange(routes); //Adds lsit of Routes to context
+            context.SaveChanges();      //Save context changes
+        }
+
+        private void loadSubscribers(CosmoContext context)
+        {
+			//Get all regions created from the startup
+            List<Region> regions = context.Region.ToList<Region>();
+			//Location for the first hard coded subscribers
+            Location location = new Location
+            {
+                address = "123 Street",
+                city = "Saskatoon",
+                postalCode = "A1A1A1",
+                province = "SK",
+                locationType = "PickUp",
+                region = regions[3]
+            };
+
+			//Location for the second hard coded subscribers
+			Location location2 = new Location
+            {
+                address = "123 Street",
+                city = "Saskatoon",
+                postalCode = "A1A1A1",
+                province = "SK",
+                locationType = "PickUp",
+                region = regions[4]
+            };
+
+			//Location for the third hard coded subscribers
+			Location location3 = new Location
+            {
+                address = "123 Street",
+                city = "Saskatoon",
+                postalCode = "A1A1A1",
+                province = "SK",
+                locationType = "PickUp"
+            };
+
+            //Save changes to DB
+            context.SaveChanges();
+
+            
+			//Create a list of hardcoded subscribers so we can sign in on the front end 
+            List<Subscriber> subscribers = new List<Subscriber>()
+            {
+                new Subscriber()
+                {
+
+                    email = "cans4cosmo@gmail.com",
+                    phoneNumber = "1234567890",
+                    firstName = "Cosmo",
+                    location = location
+                },
+                new Subscriber()
+                {
+                    email = "nathanissupercool101@gmail.com",
+                    phoneNumber = "1234567890",
+                    firstName = "Nathan",
+                    location = location2
+                },
+                new Subscriber()
+                {
+                    email = "cosmonoregion@gmail.com",
+                    phoneNumber = "1234567890",
+                    firstName = "NathanNoRegion",
+                    location = location3
+				},
+				new Subscriber()
+				{
+                    email = "Everyone@gmail.com",
+                    phoneNumber = "1234567890",
+                    firstName = "Cosmo",
+                    location = location
+                },
+                new Subscriber()
+                {
+                    email = "Moneybags@hotmail.com",
+                    phoneNumber = "1234567890",
+                    firstName = "Money",
+                    location = location
+                },
+                //3 more
+                 new Subscriber()
+                {
+                    email = "NathisIsCool@hotmail.com",
+                    phoneNumber = "1234567890",
+                    firstName = "Nathan",
+                    location = location
+                },
+                new Subscriber()
+                {
+                    email = "RobMiller@saskpolytech.ca",
+                    phoneNumber = "1234567890",
+                    firstName = "Rob",
+                    lastName = "Miller",
+                    location = location
+                },
+                new Subscriber()
+                {
+                    email = "49ersSupportGroup@hotmail.com",
+                    phoneNumber = "1234567890",
+                    location = location
+                },
+                new Subscriber()
+                {
+                    email = "aaron_atkinson@hotmail.com",
+                    firstName = "Aaron",
+                    lastName = "Atkinson",
+                    phoneNumber = "1234567890",
+                    location = location
+                },
+                new Subscriber()
+                {
+                    email = "JessieSmith@gmail.com",
+                    firstName = "Jessie",
+                    lastName = "Smith",
+                    phoneNumber = "1234567890",
+                    location = location
+                },
+                new Subscriber()
+                {
+                    email = "Mario@mushroomkingdom.com",
+                    firstName= "Mario",
+                    phoneNumber = "1234567890",
+                    location = location
+                },
+                new Subscriber()
+                {
+                    email = "luigi@mushroomkingdom.com",
+                    firstName = "Luigi",
+                    phoneNumber = "1234567890",
+                    location = location
+                },
+                new Subscriber()
+                {
+                    email = "peach@mushroomkingdom.com",
+                    firstName = "Peach",
+                    phoneNumber = "1234567890",
+                    location = location
+                }
+            };
+
+            context.Subscriber.AddRange(subscribers);
+            context.SaveChanges();
+        }
+
+
+
+    }
+
+}

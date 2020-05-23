@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>DoesEditModeStopOnPageSwitch_SwitchAwayFromRoutesAndBack_EditModeOff</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>269f40f4-6ed9-48c6-a821-9242bf964c60</testCaseGuid>
+</TestCaseEntity>

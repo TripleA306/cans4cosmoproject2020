@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>CreateRegionObject_AllFieldsIncorrect_RegionNotCreated</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>9a3ee6fa-acbd-4c35-91b6-1a08ca1490b3</testCaseGuid>
+</TestCaseEntity>

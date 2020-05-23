@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>SubscriberNavigatesToCollectionPage_CollectionMenuItemClicked_SubscriberRoutedToCollectionPage</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>dc42b30a-0772-407f-a702-d28e1e0fa5ce</testCaseGuid>
+</TestCaseEntity>

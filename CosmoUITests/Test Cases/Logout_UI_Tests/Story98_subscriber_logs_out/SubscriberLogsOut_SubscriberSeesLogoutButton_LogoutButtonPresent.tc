@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>SubscriberLogsOut_SubscriberSeesLogoutButton_LogoutButtonPresent</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>ebb27400-5f8c-4d3a-80bb-028c96b1b7c2</testCaseGuid>
+</TestCaseEntity>

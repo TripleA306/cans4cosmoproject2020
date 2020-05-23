@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>AdminCanViewRegionDetails_DetailsAreDisplayed</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>ada5f812-6ccf-48ab-bb99-a7be53cb90dd</testCaseGuid>
+</TestCaseEntity>

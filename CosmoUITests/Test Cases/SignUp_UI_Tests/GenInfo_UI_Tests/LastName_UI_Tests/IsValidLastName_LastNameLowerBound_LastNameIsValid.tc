@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>IsValidLastName_LastNameLowerBound_LastNameIsValid</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>6c4dbfef-8eb1-4cd2-98d9-2ae2234aaf31</testCaseGuid>
+</TestCaseEntity>

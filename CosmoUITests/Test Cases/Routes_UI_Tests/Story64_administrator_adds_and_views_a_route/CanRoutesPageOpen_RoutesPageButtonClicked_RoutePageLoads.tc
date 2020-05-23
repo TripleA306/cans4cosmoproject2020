@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>CanRoutesPageOpen_RoutesPageButtonClicked_RoutePageLoads</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>25f984e2-82bc-4532-ba04-0f1c9fe6bd31</testCaseGuid>
+</TestCaseEntity>

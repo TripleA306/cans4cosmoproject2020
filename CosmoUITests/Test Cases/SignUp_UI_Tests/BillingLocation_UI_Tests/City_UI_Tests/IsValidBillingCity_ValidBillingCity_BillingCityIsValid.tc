@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>IsValidBillingCity_ValidBillingCity_BillingCityIsValid</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>c22a15bf-0ebc-4093-aa72-7a5f69347042</testCaseGuid>
+</TestCaseEntity>

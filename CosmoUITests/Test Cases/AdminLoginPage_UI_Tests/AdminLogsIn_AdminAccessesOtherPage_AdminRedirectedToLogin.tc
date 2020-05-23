@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>AdminLogsIn_AdminAccessesOtherPage_AdminRedirectedToLogin</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>a13376df-6ec7-4a46-99b5-eb89411f7238</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>IsNotValidBillingPCode_BillingPCodeFailsRegex_BillingPCodeNotValid</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>5b2df38d-56a5-4ce8-9ae7-e9c0dfc10bbd</testCaseGuid>
+</TestCaseEntity>

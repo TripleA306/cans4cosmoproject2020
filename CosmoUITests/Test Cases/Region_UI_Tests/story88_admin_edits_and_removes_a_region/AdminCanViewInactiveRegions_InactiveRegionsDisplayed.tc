@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>AdminCanViewInactiveRegions_InactiveRegionsDisplayed</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>ae92006b-8ce9-44fd-b824-61ee54012363</testCaseGuid>
+</TestCaseEntity>

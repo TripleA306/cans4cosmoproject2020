@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>CreateRegionObject_NameTooLong_RegionNotCreated</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>7a0ef969-e62d-4006-8fbf-3f566e389d0d</testCaseGuid>
+</TestCaseEntity>

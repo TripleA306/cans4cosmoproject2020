@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>SubscriberViewsCollectionHistory_SubscriberRoutedToCollectionPage_CollectionListLoadedDescendingOrder</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>eb4e3fe5-7911-4bee-bc2c-57770a69a7e4</testCaseGuid>
+</TestCaseEntity>

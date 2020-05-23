@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Non-numeric characters are entered into the phone number field</description>
+   <name>IsNotValidPNum_PNumWithNonNumbers_PNumNotValid</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>f9f51097-1309-41ac-a1e3-85ae6399398c</testCaseGuid>
+</TestCaseEntity>

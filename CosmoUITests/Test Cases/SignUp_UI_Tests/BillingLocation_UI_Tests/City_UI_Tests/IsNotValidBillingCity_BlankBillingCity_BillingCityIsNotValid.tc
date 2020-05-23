@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>IsNotValidBillingCity_BlankBillingCity_BillingCityIsNotValid</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>0268bff1-4179-4094-adda-009afc1a80a7</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>SubscriberLogsOut_SubscriberLogsOutAndAccessesHistoryPage_SubscriberRemainsAtLoginPage</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>4e2d3100-9dce-44be-a7a2-9c619e6a3428</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Valid phone number</description>
+   <name>IsValidPNum_ValidPNum_PNumIsValid</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>077826b3-0129-41b7-bbd4-4b2da8381c5b</testCaseGuid>
+</TestCaseEntity>

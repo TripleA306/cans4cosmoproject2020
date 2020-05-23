@@ -1,0 +1,21 @@
+*.class
+*.swp
+Libs/TempTestCase*
+Libs/TempTestSuite*
+bin/lib/TempTestCase*
+Reports/
+
+.settings
+bin
+Checkpoints
+Drivers
+Include
+Libs
+Plugins
+Profiles
+Reports
+settings
+Test Listeners
+.project
+*.properties*
+

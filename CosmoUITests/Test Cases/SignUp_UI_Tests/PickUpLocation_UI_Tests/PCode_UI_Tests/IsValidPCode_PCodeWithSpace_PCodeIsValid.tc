@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>IsValidPCode_PCodeWithSpace_PCodeIsValid</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>b4468b25-626c-4a3a-bad9-f03be05fa9dc</testCaseGuid>
+</TestCaseEntity>

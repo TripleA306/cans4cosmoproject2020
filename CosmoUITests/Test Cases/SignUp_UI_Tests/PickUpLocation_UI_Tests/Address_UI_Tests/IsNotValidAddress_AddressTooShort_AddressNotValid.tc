@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>IsNotValidAddress_AddressTooShort_AddressNotValid</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>b5c12453-864b-4c1a-9396-66602804cd11</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>IsNewlyCompletedRouteMovedToCompleted_RouteSetToComplete_RouteMovedToComplete</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>b7a38416-2aa3-41e1-9b6f-aa5bc7a6a731</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>IsValidBillingCity_BillingCityUpperBound_BillingCityIsValid</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>dedf9ca7-6df6-4d2e-8fcd-1e672711ac2e</testCaseGuid>
+</TestCaseEntity>

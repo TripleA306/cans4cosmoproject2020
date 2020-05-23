@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>AdminListsSubscribersDescendingOrder_DownArrowClicked_SubscriberTableRearranged</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>e4768fc6-cd83-4311-b326-415e3c0f3028</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>AdminClicksLogoutButton_AdminLoggedOut_AdminRoutedToLoginPage</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>ec985a9e-b927-4a2b-9603-95dcfdc11bfb</testCaseGuid>
+</TestCaseEntity>

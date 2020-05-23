@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>PNum too long. 11 characters</description>
+   <name>IsNotValidPNum_PNumTooLong_PNumNotValid</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>efa7fcac-4f77-42e6-89d3-ae42c97527f5</testCaseGuid>
+</TestCaseEntity>

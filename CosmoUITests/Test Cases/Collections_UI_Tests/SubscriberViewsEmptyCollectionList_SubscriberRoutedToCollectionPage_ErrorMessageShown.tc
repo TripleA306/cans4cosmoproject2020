@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>SubscriberViewsEmptyCollectionList_SubscriberRoutedToCollectionPage_ErrorMessageShown</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>a3bd7569-a653-4130-8830-c2af9f07a491</testCaseGuid>
+</TestCaseEntity>

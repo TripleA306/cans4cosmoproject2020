@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>This test case will ensure that the google authentication popup form opens when the &quot;Continue with Google&quot; button is clicked</description>
+   <name>OpenSigninPopup_SignInButtonClicked_PopupOpens</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>9adb780c-20f1-4e60-aaa0-93c83dcafb9a</testCaseGuid>
+</TestCaseEntity>

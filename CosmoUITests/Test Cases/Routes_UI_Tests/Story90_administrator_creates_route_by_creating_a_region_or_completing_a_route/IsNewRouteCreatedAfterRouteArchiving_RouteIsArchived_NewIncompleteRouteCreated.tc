@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>IsNewRouteCreatedAfterRouteArchiving_RouteIsArchived_NewIncompleteRouteCreated</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>51086d28-944d-4c68-887b-6fe2532ba80e</testCaseGuid>
+</TestCaseEntity>

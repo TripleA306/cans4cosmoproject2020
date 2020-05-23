@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29001.49
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CosmoAPI", "CosmoAPI\CosmoAPI.csproj", "{9143AB4D-2A31-4A32-B429-46DC82F99575}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CosmoAPITests", "CosmoAPITests\CosmoAPITests.csproj", "{F2BBC5E0-2532-4808-922F-793B70A5F00E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9143AB4D-2A31-4A32-B429-46DC82F99575}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9143AB4D-2A31-4A32-B429-46DC82F99575}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9143AB4D-2A31-4A32-B429-46DC82F99575}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9143AB4D-2A31-4A32-B429-46DC82F99575}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2BBC5E0-2532-4808-922F-793B70A5F00E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2BBC5E0-2532-4808-922F-793B70A5F00E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2BBC5E0-2532-4808-922F-793B70A5F00E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2BBC5E0-2532-4808-922F-793B70A5F00E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0AEE1756-ADCE-416B-9CCF-86124F73A4AA}
+	EndGlobalSection
+EndGlobal

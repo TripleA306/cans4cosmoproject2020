@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>IsNotValidAddress_BlankAddress_AddressNotValid</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>06050ddc-76de-47d9-a7c7-9510db62f923</testCaseGuid>
+</TestCaseEntity>

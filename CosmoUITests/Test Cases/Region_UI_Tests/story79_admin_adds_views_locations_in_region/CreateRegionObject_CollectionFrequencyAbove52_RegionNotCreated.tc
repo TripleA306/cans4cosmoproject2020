@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>CreateRegionObject_CollectionFrequencyAbove52_RegionNotCreated</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>b5b11352-ae06-4fd2-b18b-12d9840ada69</testCaseGuid>
+</TestCaseEntity>

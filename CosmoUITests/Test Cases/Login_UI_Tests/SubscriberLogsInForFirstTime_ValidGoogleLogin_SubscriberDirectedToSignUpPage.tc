@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>SubscriberLogsInForFirstTime_ValidGoogleLogin_SubscriberDirectedToSignUpPage</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>ff315fa5-e08c-40f1-8ad1-d704a6d064eb</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>This will test that the user is remains on the log in page after an unsuccessful google authentication login attempt</description>
+   <name>SubscriberFailsToLogIn_InvalidGoogleLogIn_SubscriberRemainsOnPage</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>9766f7a3-6515-4007-a9cb-c0c2b865dd8c</testCaseGuid>
+</TestCaseEntity>

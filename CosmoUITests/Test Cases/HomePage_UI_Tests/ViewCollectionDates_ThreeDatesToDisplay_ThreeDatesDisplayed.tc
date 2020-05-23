@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Subscriber successfully views their next three collection dates</description>
+   <name>ViewCollectionDates_ThreeDatesToDisplay_ThreeDatesDisplayed</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>f7a4de66-31ce-4acb-a4f4-dcd38fd8e58f</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>IsValidAddress_AddressLowerBound_AddressIsValid</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>f72a38b3-5696-42e1-aa77-d372ffdface2</testCaseGuid>
+</TestCaseEntity>

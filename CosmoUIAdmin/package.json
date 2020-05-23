@@ -1,0 +1,54 @@
+{
+  "name": "untitled",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "./",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "axios": "^0.19.1",
+    "bootstrap": "^4.4.1",
+    "bootstrap-vue": "^2.2.2",
+    "core-js": "^3.4.4",
+    "cors": "^2.8.5",
+    "cors-server": "^1.0.4",
+    "js-sha256": "^0.9.0",
+    "moment": "^2.24.0",
+    "serve": "^11.3.0",
+    "vue": "^2.6.11",
+    "vue-axios": "^2.1.5",
+    "vue-google-signin-button": "^1.0.4",
+    "vue-router": "^3.1.6",
+    "vuelidate": "^0.7.5"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.1.0",
+    "@vue/cli-plugin-eslint": "^4.1.0",
+    "@vue/cli-service": "^4.1.0",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}

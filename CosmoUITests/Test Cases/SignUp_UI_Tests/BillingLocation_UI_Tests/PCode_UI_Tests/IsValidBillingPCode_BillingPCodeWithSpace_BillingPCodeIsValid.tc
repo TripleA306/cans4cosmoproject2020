@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>IsValidBillingPCode_BillingPCodeWithSpace_BillingPCodeIsValid</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>f4351270-4f80-42df-bdb9-c030284db2c7</testCaseGuid>
+</TestCaseEntity>

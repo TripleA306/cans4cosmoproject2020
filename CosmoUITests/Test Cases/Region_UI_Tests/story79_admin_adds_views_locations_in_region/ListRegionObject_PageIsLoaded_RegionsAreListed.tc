@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>ListRegionObject_PageIsLoaded_RegionsAreListed</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>e9ecacdc-0c3e-447a-93e5-1c847c5d893e</testCaseGuid>
+</TestCaseEntity>

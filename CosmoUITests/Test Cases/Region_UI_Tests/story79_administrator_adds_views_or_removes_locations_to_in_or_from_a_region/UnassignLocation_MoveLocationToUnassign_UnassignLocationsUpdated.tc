@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>UnassignLocation_MoveLocationToUnassign_UnassignLocationsUpdated</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>dc2e5d94-7c40-4920-99e7-6a050d1aea51</testCaseGuid>
+</TestCaseEntity>
